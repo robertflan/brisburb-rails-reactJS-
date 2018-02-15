@@ -4,7 +4,7 @@ var AllItems = React.createClass({
 	},
 	componentDidMount(){
 		console.log('Component mounted');
-		$.getJson('/api/vi/items.json', (response) => {this. setstate({ items:response })});
+		$.getJSON('/api/vi/items.json', (response) => {this. setState({ items:response })});
 	},
 	render(){
 		return(
