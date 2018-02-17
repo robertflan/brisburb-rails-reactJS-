@@ -7,9 +7,17 @@ var AllItems = React.createClass({
 		$.getJSON('/api/vi/items.json', (response) => {this. setState({ items:response })});
 	},
 	render(){
+		var items = this.state.items.map((item) => {
+			return(
+				<div>
+					<h3>{item.name}</h3>
+					<p>{item.description}</p>
+				</div>
+				)
+		});
 		return(
 			<div>
-				<h1>All items component</h1>
+				{items}
 			</div>
 		)
 	}
